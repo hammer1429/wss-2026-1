@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#깃허브에 .으로 시작되는건 올리지 않는다.
