@@ -27,6 +27,13 @@ export default function Home() {
         >
           /about 페이지로 이동 (파일 기반 라우팅 확인) →
         </Link>
+
+        <Link
+          href="/products"
+          className="mt-8 block text-sm font-medium text-amber-50 underline underline-offset-4"
+        >
+          상품 목록으로 이동 →
+        </Link>
       </main>
     </div>
   );
