@@ -43,6 +43,12 @@ export default function Home() {
           >
             /api/hello — Route Handler가 응답하는 JSON 확인 →
           </Link>
+          <Link
+            href="/notices"
+            className="font-medium text-zinc-950 underline underline-offset-4 dark:text-zinc-50"
+          >
+            공지사항 목록 →
+          </Link>
         </div>
       </main>
     </div>
