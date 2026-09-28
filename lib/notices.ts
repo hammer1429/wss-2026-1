@@ -22,7 +22,7 @@ const notices: Notice[] = [
     createdAt: "2026-09-22",
   },
 ];
-let nextId = 4;
+let nextId = 3;
 
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));

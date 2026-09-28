@@ -33,6 +33,10 @@ export default async function NoticesPage() {
           </li>
         ))}
       </ul>
+
+      <Link href="/" className="text-black-500 hover:underline">
+        홈으로 돌아가기
+      </Link>
     </div>
   );
 }
