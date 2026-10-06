@@ -14,7 +14,7 @@ export default function Home() {
         </span>
 
         <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-          웹서버보안프로그래밍 — 4주차
+          웹서버보안프로그래밍 — 김용현
         </h1>
         <p className="max-w-md text-base leading-7 text-zinc-600 dark:text-zinc-400">
           3주차 템플릿에 라우팅·데이터 페칭·Server Action 예제를 추가했습니다.
