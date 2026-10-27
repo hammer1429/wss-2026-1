@@ -1,15 +1,13 @@
-import { Schema } from "mongoose";
-import { model, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
-export const noticeSchema = new Schema(
+const noticeSchema = new Schema(
   {
     title: { type: String, required: true, trim: true },
-    author: { type: String, required: true, trim: true },
     content: { type: String, required: true },
+    authorId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    authorName: { type: String, required: true, trim: true },
   },
-  {
-    timestamps: true,
-  },
+  { timestamps: true },
 );
 
 export const Notice = models.Notice || model("Notice", noticeSchema);
