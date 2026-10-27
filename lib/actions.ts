@@ -111,7 +111,11 @@ export async function registerAction(formData: FormData) {
 // 삼켜버리면 로그인 성공 후 리다이렉트까지 막혀버립니다.
 export async function loginAction(formData: FormData) {
   try {
-    await signIn("credentials", formData);
+    await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      redirectTo: "/",
+    });
   } catch (error) {
     if (error instanceof AuthError) {
       redirect("/login?error=1");
