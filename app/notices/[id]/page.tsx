@@ -17,10 +17,7 @@ export default async function NoticeDetailPage({ params }: Props) {
   }
 
   const session = await auth();
-  // 삭제 버튼을 보여줄지 말지는 여기서 결정하지만, 이건 순전히 사용자
-  // 경험을 위한 것입니다. 실제 삭제 권한 검사는 deleteNoticeAction 안에서
-  // (lib/actions.ts) 다시 한번 이뤄집니다 — 버튼이 안 보인다고 요청을
-  // 못 보내는 건 아니기 때문입니다.
+
   const canDelete =
     !!session?.user &&
     (session.user.id === notice.authorId || session.user.role === "admin");
