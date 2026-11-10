@@ -190,8 +190,8 @@ export async function deleteNoticeAction(formData: FormData) {
 
 // 회원가입: 비밀번호를 해싱해 User 컬렉션에 저장한 뒤, 곧바로 로그인까지
 // 이어서 처리합니다. signIn()이 성공하면 내부적으로 리다이렉트를 던지므로
-// registerAction은 반환값을 따로 처리하지 않습니다.
-export async function registerAction(formData: FormData) {
+// registerUserAction은 반환값을 따로 처리하지 않습니다.
+export async function registerUserAction(formData: FormData) {
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "")
     .trim()
