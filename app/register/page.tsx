@@ -1,4 +1,4 @@
-import { registerUserAction } from "@/lib/actions";
+import { registerAction } from "@/lib/actions";
 import { SubmitButton } from "@/components/SubmitButton";
 
 // app/notices/new/page.tsx와 완전히 같은 패턴입니다: Server Component +
@@ -10,7 +10,7 @@ export default function RegisterPage() {
       <h1 className="text-2xl font-semibold text-black dark:text-zinc-50">
         회원가입
       </h1>
-      <form action={registerUserAction} className="flex flex-col gap-4">
+      <form action={registerAction} className="flex flex-col gap-4">
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="name"
