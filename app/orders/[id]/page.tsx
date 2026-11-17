@@ -5,18 +5,18 @@ import { getOrder } from "@/lib/orders";
 
 type Props = { params: Promise<{ id: string }> };
 
-// 이 페이지가 이번 학기 "소유권 검사"의 마지막 예시입니다. 9주차에서
-// 공지사항에 authorId를 두고 본인 글인지 확인했던 것과 똑같은 패턴을
-// 주문에도 그대로 적용합니다:
+// 9주차에서 공지사항에 authorId를 두고 본인 글인지 확인했던 것과
+// 똑같은 패턴을 주문에도 그대로 적용합니다:
 //
 //   isOwner = order.userId === session.user.id
 //
-// 이 체크가 없으면 어떻게 될까요? 로그인만 되어 있으면 누구든 URL의
-// id만 바꿔서(/orders/<다른 사람의 주문 id>) 다른 사람의 구매 내역과
-// 배송/결제 정보를 볼 수 있게 됩니다 — 이것이 바로 12~14주차에 다룰
+// [13주차 · IDOR 실습] 아래 두 줄(isOwner/isAdmin 체크와 그 if문)을
+// 잠깐 지우고 새로고침해보세요 — 로그인만 되어 있으면 다른 사용자의
+// 주문 id로도 상세 내역이 그대로 보이는 것을 확인할 수 있습니다. 이것이
 // IDOR(Insecure Direct Object Reference, 안전하지 않은 직접 객체 참조)
-// 취약점의 전형적인 형태입니다. "로그인했는지"만 확인하고 "그 사람
-// 것인지"를 확인하지 않으면 인증은 있어도 인가는 없는 상태가 됩니다.
+// 취약점입니다. "로그인했는지"만 확인하고 "그 사람 것인지"를 확인하지
+// 않으면 인증은 있어도 인가는 없는 상태가 됩니다. 확인이 끝나면 반드시
+// 원래대로 되돌려두세요 — 이 두 줄이 실제 배포판의 유일한 방어선입니다.
 export default async function OrderDetailPage({ params }: Props) {
   const { id } = await params;
   const session = await auth();
